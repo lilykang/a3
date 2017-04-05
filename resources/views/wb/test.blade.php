@@ -53,24 +53,32 @@
         </fieldset>
 
         <br>
-        <input type='submit' class='btn btn-primary btn-small'>
+        <input type='submit' name='submit' class='btn btn-primary btn-small'>
 
     </form>
 
-<!-- Displaying all the errors -->
 
-    @if(count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @else
-       <div class="alert alert-info">
-           Your Well-Being Score for {{ $todayDate }} is: {{ $totalPoints }}
-      </div>
+
+    <!-- Only display errors or wellbeing score after the form has been submitted -->
+    @if($_GET)
+
+        <!-- Displaying all the errors -->
+        @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+
+        <!-- Diplay well being score if there is no error -->
+        @else
+           <div class="alert alert-info">
+               Your Well-Being Score for {{ $todayDate }} is: {{ $totalPoints }}
+          </div>
+        @endif
+
     @endif
 
 

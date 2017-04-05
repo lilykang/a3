@@ -17,7 +17,7 @@ class WbController extends Controller {
     $bonus = $request->input('bonus', null);
     $totalBonus = count($bonus);
 
-    if($minWorkout && $minWorkout && $journal && $pagesRead) {
+     if ($_GET) {
         $totalPoints = $totalPoints + $minWorkout + $pagesRead;
 
         if($journal == 'Yes'){
@@ -28,17 +28,15 @@ class WbController extends Controller {
             $totalPoints = $totalPoints + 20*$totalBonus;
         }
 
-    }
+        # Validate the request data
+        $this->validate($request, [
+            'todayDate' => 'required|date',
+            'minWorkout' => 'required|numeric|min:0',
+            'pagesRead' => 'required|integer|min:0',
+            'journal' => 'required'
+        ]);
 
-    # Validate the request data
-    /*
-    $this->validate($request, [
-        'todayDate' => 'required|date',
-        'minWorkout' => 'required|numeric|min:0',
-        'pagesRead' => 'required|integer|min:0',
-        'journal' => 'required'
-    ]);
-    */
+    }
 
     return view('wb.test')->with([
         'todayDate' => $todayDate,

@@ -182,6 +182,9 @@ return [
 
         // add Laravel Collective to enable Form
         Collective\Html\HtmlServiceProvider::class,
+
+        // add Laravel Log Viewer package
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
     ],
 
     /*
