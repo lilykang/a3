@@ -34,8 +34,8 @@
         <!-- Indicate whether journaled using radio button -->
         <fieldset class='radios'>
             <label>*Did you journal today?</label>
-            <h5><input type='radio' name='journal' required {{ Form::radio('journal', 'Yes') }} Yes (+20 pts.)</h5>
-            <h5><input type='radio' name='journal' {{ Form::radio('journal', 'No') }} No</h5>
+            <h5>{{ Form::radio('journal', 'Yes') }} Yes (+20 pts.)</h5>
+            <h5>{{ Form::radio('journal', 'No') }} No</h5>
         </fieldset>
 
         <!-- Enter number of pages read using text box -->
