@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // add the Debugbar from newly installed package
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        // add Laravel Collective to enable Form
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -226,6 +231,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // enable the Debugbar package
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        // enable Form facade
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
