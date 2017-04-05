@@ -46,10 +46,10 @@
         <!-- Check bonus actions completed using checkbox -->
         <fieldset class='checkboxes'>
             <label>Which of the following did you do today? (Check all that apply)</label>
-            <h5><input type='checkbox' name='bonus[]' {{ Form::checkbox('bonus[]', 'thankyou') }} Writing a thank-you note (+20 pts.)</h5>
-            <h5><input type='checkbox' name='bonus[]' {{ Form::checkbox('bonus[]', 'kindness') }} Doing something kind to others (+20 pts.)</h5>
-            <h5><input type='checkbox' name='bonus[]' {{ Form::checkbox('bonus[]', 'stranger') }} Talking to a stranger (+20 pts.)</h5>
-            <h5><input type='checkbox' name='bonus[]' {{ Form::checkbox('bonus[]', 'veggie') }} Eating a vegeterian diet (+20 pts.)</h5>
+            <h5>{{ Form::checkbox('bonus[]', 'thankyou') }} Writing a thank-you note (+20 pts.)</h5>
+            <h5>{{ Form::checkbox('bonus[]', 'kindness') }} Doing something kind to others (+20 pts.)</h5>
+            <h5>{{ Form::checkbox('bonus[]', 'stranger') }} Talking to a stranger (+20 pts.)</h5>
+            <h5>{{ Form::checkbox('bonus[]', 'veggie') }} Eating a vegeterian diet (+20 pts.)</h5>
         </fieldset>
 
         <br>
