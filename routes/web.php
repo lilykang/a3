@@ -14,4 +14,6 @@
 Route::get('/', 'WbController@index');
 
 # route for logs which is only accessible in local server
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+if(config('app.env') == 'local') {
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+}
