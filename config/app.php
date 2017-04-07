@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -180,7 +181,7 @@ return [
         // add the Debugbar from newly installed package
         Barryvdh\Debugbar\ServiceProvider::class,
 
-        // add Laravel Collective to enable Form
+        // add Laravel Collective to enable Form and Input classes
         Collective\Html\HtmlServiceProvider::class,
 
         // add Laravel Log Viewer package
@@ -240,6 +241,9 @@ return [
         // enable Form facade
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        // enable Input facade
+        'Input' => Illuminate\Support\Facades\Input::class,
     ],
 
 ];

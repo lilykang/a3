@@ -101,6 +101,32 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'todayDate' => [
+            'required' => 'Date is missing',
+            'date' => 'You must enter a date in this format: MM/DD/YYYY',
+        ],
+
+        'minWorkout' => [
+            'required' => 'Please enter a number for the minutes you worked out',
+            'numeric' => 'Please enter a number for the minutes you worked out',
+            'min:0' => 'Please enter a number greater than 0 for how long you worked out',
+
+        ],
+
+        'journal' => [
+            'required' => 'Please indicate Yes or No for whether or not you journaled',
+        ],
+
+        'pagesRead' => [
+            'required' => 'Please enter a number for the pages you read',
+            'integer' => 'You must enter an integer for the number of pages you read',
+            'min:0' => 'Please enter a number greater than 0 for the pages you read',
+        ],
+
+
+
+
     ],
 
     /*

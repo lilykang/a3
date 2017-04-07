@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class WbController extends Controller {
 
     public function index(Request $request) {
 
+    # declare variables and assign initial values
     $totalPoints = 0;
     $todayDate = $request->input('todayDate', null);
     $minWorkout = $request->input('minWorkout', null);
@@ -16,8 +18,11 @@ class WbController extends Controller {
     $pagesRead = $request->input('pagesRead', null);
     $bonus = $request->input('bonus', null);
     $totalBonus = count($bonus);
+    $submit = $request->input('submit',null);
 
-     if ($_GET) {
+    # When the form is submmitted, the calculation for total points will be made
+    # or the errors will display if the inputs do not meet the criteria
+    if ($submit) {
         $totalPoints = $totalPoints + $minWorkout + $pagesRead;
 
         if($journal == 'Yes'){
@@ -32,13 +37,14 @@ class WbController extends Controller {
         $this->validate($request, [
             'todayDate' => 'required|date',
             'minWorkout' => 'required|numeric|min:0',
+            'journal' => 'required',
             'pagesRead' => 'required|integer|min:0',
-            'journal' => 'required'
         ]);
 
     }
 
-    return view('wb.test')->with([
+    # return the view with variables
+    return view('wb.main')->with([
         'todayDate' => $todayDate,
         'minWorkout' => $minWorkout,
         'journal' => $journal,
@@ -46,6 +52,7 @@ class WbController extends Controller {
         'bonus' => $bonus,
         'totalPoints' => $totalPoints,
         'request' => $request,
+        'submit' => $submit,
     ]);
 
 

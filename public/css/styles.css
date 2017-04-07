@@ -12,13 +12,13 @@ footer {
 
 
 label, legend {
-    display:inline;
+    display:block;
     margin-top:20px;
     margin-bottom:0;
 }
 
 input, textarea, select {
-    display:inline;
+    display:block;
 }
 
 input[type='checkbox'], input[type='radio'] {
