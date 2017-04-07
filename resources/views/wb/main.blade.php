@@ -15,25 +15,25 @@
     <form method='GET' action='/'>
         <!-- Enter today's date -->
         <label for='todayDate'>*Please enter today's date:</label>
-        <input type='date' name='todayDate' required id='todayDate' value='{{ $todayDate or old('todayDate') }}'>
+        <input type='date' name='todayDate' required id='todayDate' value='{{ $todayDate or '' }}'>
 
         <br/>
         <!-- Indicate how long the workout is using text box -->
         <label for='minWorkout'>*How long (in minutes) did you work out today?</label>
 				<h5>(enter a number greater than 0; number of minutes = number of points earned)</h5>
-        <input type='number' name='minWorkout' required id='minWorkout' value='{{ $minWorkout or old('minWorkout') }}'>
+        <input type='number' name='minWorkout' required id='minWorkout' value='{{ $minWorkout or '' }}'>
 
         <!-- Indicate whether journaled using radio button -->
         <fieldset class='radios'>
             <label>*Did you journal today?</label>
-            <h5>{{ Form::radio('journal', 'Yes', old('journal')) }} Yes (+20 pts.)</h5>
-            <h5>{{ Form::radio('journal', 'No', old('journal')) }} No</h5>
+            <h5>{{ Form::radio('journal', 'Yes') }} Yes (+20 pts.)</h5>
+            <h5>{{ Form::radio('journal', 'No') }} No</h5>
         </fieldset>
 
         <!-- Enter number of pages read using text box -->
 				<label for='pagesRead'>*How many pages did you read today?</label>
 				<h5>(enter a number greater than 0; number of pages = number of points earned)</h5>
-        <input type='number' name='pagesRead' required id='pagesRead' value='{{ $pagesRead or old('pagesRead') }}'>
+        <input type='number' name='pagesRead' required id='pagesRead' value='{{ $pagesRead or '' }}'>
 
         <!-- Check bonus actions completed using checkbox -->
         <fieldset class='checkboxes'>
